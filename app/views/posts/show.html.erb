@@ -1,12 +1,15 @@
-<p>
-  <strong>Title:</strong>
- <%= @post.title %>
-</p>
 
 <p>
  <strong>Post:</strong>
  <%= simple_format(@post.text) %>
 </p>
+
+<p>
+ <strong>User: </strong>
+ <%= @email %>
+ <strong>created_at: </strong>
+ <%= @post.created_at.strftime("%m/%d/%Y, %H:%M") %>
+</p> 
 
 <h2>Comments</h2>
 <%= render @post.comments %>
@@ -14,6 +17,7 @@
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
  
-
+<% if current_user && @post.user_id==current_user.id %>
 <%= link_to '<button type="button">Edit</button>'.html_safe, edit_post_path(@post) %>
+<% end %>
 <%= link_to '<button type="button">Back</button>'.html_safe, posts_path %>
