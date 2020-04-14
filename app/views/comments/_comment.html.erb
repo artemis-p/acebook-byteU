@@ -1,7 +1,9 @@
 
 <p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <strong>Commented By</strong>
+  <% if current_user %>
+  <%= User.find(comment.user_id).email %>
+  <% end %>
 </p>
  
 <p>
@@ -10,7 +12,9 @@
 </p>
 
 <p>
+  <% if current_user && ( comment.user_id == current_user.id || @post.user_id == current_user.id ) %>
   <%= link_to '<button type="button">Delete Comment</button>'.html_safe, [comment.post, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
+ <% end %>
 </p>
