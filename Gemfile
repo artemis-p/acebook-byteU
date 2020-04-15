@@ -15,6 +15,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'devise-i18n'
+gem 'devise-bootstrap-views'
 # Use bootstrap for stylings
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails'
