@@ -2,10 +2,9 @@
 
 <strong>Post</strong>
 <table>
-  
-  <% @posts.each do |post| %>
 
-  <tr>
+  <% @posts.each do |post| %>
+    <tr>
       
       <td><%= simple_format(post.text)%></td>
       <td><%= link_to '<button type="button">Show</button>'.html_safe, post_path(post) %></td>
