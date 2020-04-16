@@ -25,6 +25,7 @@
 <% end %>
 </table>
 
-<% if current_user %>
+
+<% if current_user && @enable_write_post != false%>
 <%= link_to '<button type="button">Write a new post</button>'.html_safe, new_post_path(:wall_id =>@wall_id) %>
-<% end %>
+<% end %>  
