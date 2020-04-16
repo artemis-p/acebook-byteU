@@ -21,5 +21,5 @@
 </table>
 
 <% if current_user %>
-<%= link_to '<button type="button">Write a new post</button>'.html_safe, new_post_path %>
+<%= link_to '<button type="button">Write a new post</button>'.html_safe, new_post_path(:wall_id =>@wall_id) %>
 <% end %>

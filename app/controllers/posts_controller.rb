@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @wall_id = params[:wall_id]
     @post=Post.new
   end
 
@@ -54,7 +55,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:text)
+    params.require(:post).permit(:text, :wall_id)
   end
 
 end
