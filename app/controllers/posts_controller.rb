@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   def index
     @posts = Post.all.order(:updated_at).reverse_order
+    @enable_write_post = false
   end
 
   def show
@@ -21,6 +22,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @wall_id = @post.wall_id
   end
 
   def create
@@ -51,9 +53,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @wall_id = @post.wall_id
     @post.destroy
-
-    redirect_to posts_path
+    redirect_to wall_path(id: @wall_id)
   end
 
   private

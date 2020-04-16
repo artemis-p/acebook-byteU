@@ -1,8 +1,9 @@
-class WallController < ApplicationController
+# frozen_string_literal: true
 
+class WallController < ApplicationController
   def show
     user_id = params[:id]
-    @posts = Post.where(wall_id: user_id)
+    @posts = Post.where(wall_id: user_id).order(:updated_at).reverse_order
     @wall_id = user_id
     render 'posts/index'
   end
@@ -10,5 +11,4 @@ class WallController < ApplicationController
   def index
     @user = User.all
   end
-
 end
