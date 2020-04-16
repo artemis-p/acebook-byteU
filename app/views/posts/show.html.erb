@@ -20,4 +20,4 @@
 <% if current_user && @post.user_id==current_user.id %>
 <%= link_to '<button type="button">Edit</button>'.html_safe, edit_post_path(@post) %>
 <% end %>
-<%= link_to '<button type="button">Back</button>'.html_safe, posts_path %>
+<%= link_to '<button type="button">Back</button>'.html_safe, all_post_path %>
