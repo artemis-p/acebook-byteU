@@ -1,0 +1,17 @@
+<h1>byteU Feed</h1>
+<table>
+  <tr>
+    <th>Friends Wall</th>
+    <th></th>
+  </tr>
+  <% @user.each do |user| %>
+
+  <tr>
+      
+    <td><a href=<%= wall_path(:id => user.id)%>><%= user.email %></a></td>
+
+  </tr>
+
+  <% end %>
+
+</table>
