@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index]
+  before_action :authenticate_user!
   def index
     @posts = Post.all.order(:updated_at).reverse_order
     @enable_write_post = false
