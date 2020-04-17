@@ -48,6 +48,9 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  # for testing (remove if necessary)
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 
 group :development do

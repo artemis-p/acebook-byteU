@@ -1,0 +1,23 @@
+<strong>Post</strong>
+<table>
+
+  <% @posts.each do |post| %>
+    <tr>
+
+      <td><%= simple_format(post.text)%></td>
+      <td><%= link_to '<button type="button">Show</button>'.html_safe, post_path(post) %></td>
+      <% if (current_user && post.user_id == current_user.id) %>
+      <td><%= link_to '<button type="button">Update</button>'.html_safe, edit_post_path(post) %></td>
+      <td><%= link_to '<button type="button">Delete</button>'.html_safe, post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure you want to delete?' } %></td>
+      <% end %>
+
+    </tr>
+
+<% end %>
+</table>
+
+<% if current_user %>
+<%= link_to '<button type="button">Write a new post</button>'.html_safe, new_post_path %>
+<% end %>
