@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
     @comment.user_id=current_user.id
     @comment.save
     redirect_to post_path(@post)
-    flash[:alert]="Comment created successfully"
+    flash[:notice]="Comment created successfully"
   end
- 
+
   def destroy
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
