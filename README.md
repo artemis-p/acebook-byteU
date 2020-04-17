@@ -56,7 +56,7 @@ localhost:3000
 ## User Stories
 ```
 As a User
-so that i can use byteU
+So that I can use byteU
 I want to sign up
 ```
 ```
@@ -70,12 +70,12 @@ I want to log out
 ```
 ```
 As a User
-I want to redirected to my own wall when logged In
+I want to be redirected to my own wall when logged in
 ```
 ```
 As a User
-so that its confirmed that I am logged in
-I want able to see my email on top of the page
+So that its confirmed that I am logged in
+I want to be able to see my email on top of the page
 ```
 ```
 As a User
@@ -91,7 +91,11 @@ I want to post a message on any user's wall and the post only appears on that us
 ```
 ```
 As a User
-I want to be able to edit and delete my own posts from my wall and other users wall
+I want to be be able to edit and delete my own posts from my wall and other users wall
+```
+```
+As a User
+I can't update my post after 10 minutes
 ```
 ```
 As a User
